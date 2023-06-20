@@ -23,3 +23,18 @@ message HotelReply {
 message HotelListReply {
   repeated HotelReply list = 1;
 }
+
+service FlightService {
+  rpc GetFlight (google.protobuf.Empty) returns (FlightReply) {}
+  rpc GetFlightList (google.protobuf.Empty) returns (FlightListReply) {}
+}
+
+message FlightReply {
+  string airline = 1;
+  string origin = 2;
+  string destination = 3;
+}
+
+message FlightListReply {
+  repeated FlightReply list = 1;
+}
