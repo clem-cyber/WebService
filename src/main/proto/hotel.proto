@@ -3,7 +3,7 @@ option java_multiple_files = true;
 
 package infres.ws.grpc;
 
-import "google/protobuf/Empty.proto";
+import public "google/protobuf/empty.proto";
 
 service BookHotelRoomService {
   rpc GetRoom (google.protobuf.Empty) returns (RoomReply) {}
