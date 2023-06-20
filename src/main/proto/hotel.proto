@@ -7,8 +7,14 @@ import "google/protobuf/Empty.proto";
 
 service BookHotelRoomService {
   rpc GetRoom (google.protobuf.Empty) returns (RoomReply) {}
+  rpc GetHotel (google.protobuf.Empty) returns (HotelReply) {}
 }
 
 message RoomReply {
   string message = 1;
+}
+
+message HotelReply {
+  string name = 1;
+  string location = 2;
 }
