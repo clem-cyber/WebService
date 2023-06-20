@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appel API</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#apiButton").click(function() {
+        $.get("http://159.31.121.196:8080/hotels", function(data) {
+          $("#result").text(JSON.stringify(data));
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Appel API</h1>
+  <button id="apiButton">Effectuer l'appel API</button>
+  <p id="result"></p>
+</body>
+</html>
