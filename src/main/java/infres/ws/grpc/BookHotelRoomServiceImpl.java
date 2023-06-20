@@ -28,4 +28,25 @@ public class BookHotelRoomServiceImpl extends BookHotelRoomServiceGrpc.BookHotel
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void getHotelList(Empty request, StreamObserver<HotelListReply> responseObserver) {
+        HotelReply hotel1 = HotelReply.newBuilder()
+                .setName("Coucou")
+                .setLocation("Nulle part")
+                .build();
+
+        HotelReply hotel2 = HotelReply.newBuilder()
+                .setName("Delfiesta")
+                .setLocation("Marseille")
+                .build();
+
+        HotelListReply response = HotelListReply.newBuilder()
+                .addList(hotel1)
+                .addList(hotel2)
+                .build();
+
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
 }
