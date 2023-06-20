@@ -1,9 +1,0 @@
-import "google/protobuf/Empty.proto";
-
-service BookHotelRoom {
-  rpc GetRoom (google.protobuf.Empty) returns (RoomReply) {}
-}
-
-message RoomReply {
-  required string message = 1;
-}
