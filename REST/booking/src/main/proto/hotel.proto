@@ -1,0 +1,44 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package infres.ws.grpc;
+
+import public "google/protobuf/empty.proto";
+
+service BookHotelRoomService {
+  rpc GetRoom (google.protobuf.Empty) returns (RoomReply) {}
+  rpc GetHotel (google.protobuf.Empty) returns (HotelReply) {}
+  rpc GetHotelList (google.protobuf.Empty) returns (HotelListReply) {}
+}
+
+message RoomReply {
+  string message = 1;
+}
+
+message HotelReply {
+  string name = 1;
+  string location = 2;
+}
+
+message HotelListReply {
+  repeated HotelReply list = 1;
+}
+
+service FlightService {
+  rpc GetFlight (google.protobuf.Empty) returns (FlightReply) {}
+  rpc GetFlightList (google.protobuf.Empty) returns (FlightListReply) {}
+}
+
+message FlightReply {
+  string airline = 1;
+  string origin = 2;
+  string destination = 3;
+}
+
+message FlightListReply {
+  repeated FlightReply list = 1;
+}
+
+
+
+

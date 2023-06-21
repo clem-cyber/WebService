@@ -1,0 +1,38 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Booking API
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:8080
+paths:
+  /flights:
+    get:
+      summary: list of all flights
+      operationId: listFlights
+      tags:
+        - flights
+      parameters:
+        - name: origin
+          in: header
+          required: false
+          description: origin town filter for flights
+      responses:
+        '200':
+          description: A flights list was found
+
+  /hotels:
+    get:
+      summary: list of all hotels
+      operationId: listHotels
+      tags:
+        - hotels
+      parameters:
+        - name: location
+          in: header
+          required: false
+          description: location town filter for hotels
+      responses:
+        '200':
+          description: A hotels list was found
