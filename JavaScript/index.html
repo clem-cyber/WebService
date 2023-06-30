@@ -3,18 +3,7 @@
 <head>
   <title>Appel API</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("#apiButton").click(function() {
-        $.get("http://127.0.0.1:8080/hotels", function(data) {
-          $("#hotels").text(JSON.stringify(data));
-        });
-        $.get("http://127.0.0.1:8080/flights", function(data) {
-          $("#flights").text(JSON.stringify(data));
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </head>
 <body>
   <h1>Appel API</h1>
