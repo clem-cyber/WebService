@@ -6,8 +6,11 @@
   <script>
     $(document).ready(function() {
       $("#apiButton").click(function() {
-        $.get("http://159.31.121.196:8080/hotels", function(data) {
-          $("#result").text(JSON.stringify(data));
+        $.get("http://127.0.0.1:8080/hotels", function(data) {
+          $("#hotels").text(JSON.stringify(data));
+        });
+        $.get("http://127.0.0.1:8080/flights", function(data) {
+          $("#flights").text(JSON.stringify(data));
         });
       });
     });
@@ -16,6 +19,15 @@
 <body>
   <h1>Appel API</h1>
   <button id="apiButton">Effectuer l'appel API</button>
-  <p id="result"></p>
+  <button onclick="window.location.href='http://localhost:8080/login/oauth2/code/google';">
+    Connexion avec Google
+  </button>
+
+  <h3>Hotels</h3>
+  <p id="hotels"></p>
+  <h3>Vols</h3>
+  <p id="flights"></p>
+  <h3>Mon Profil</h3>
+  <p id="credentials"></p>
 </body>
 </html>

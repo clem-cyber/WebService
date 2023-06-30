@@ -18,7 +18,7 @@ public class HotelController {
     @CrossOrigin(origins = "*")
     @GetMapping("/hotels")
     public ResponseEntity<List<HotelModel>> getHotels() {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("159.31.121.201", 8081)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("127.0.0.1", 8081)
                 .usePlaintext()
                 .build();
         BookHotelRoomServiceGrpc.BookHotelRoomServiceBlockingStub stub = BookHotelRoomServiceGrpc.newBlockingStub(channel);

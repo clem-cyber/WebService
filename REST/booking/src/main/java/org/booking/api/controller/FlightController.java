@@ -19,7 +19,7 @@ public class FlightController {
     @CrossOrigin(origins = "*")
     @GetMapping("/flights")
     public ResponseEntity<List<FlightModel>> getFlights() {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("159.31.121.201", 8081)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("127.0.0.1", 8081)
                 .usePlaintext()
                 .build();
         FlightServiceGrpc.FlightServiceBlockingStub stub = FlightServiceGrpc.newBlockingStub(channel);
